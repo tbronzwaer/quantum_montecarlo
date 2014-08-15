@@ -72,9 +72,6 @@ void trial(){
 
 int main() {
     
-    //TApplication app("App",0,0);
-    
-    
     // Initialize the RNG & console precision
     unsigned long long seed = 9956ull;
     init_genrand64(seed);
@@ -141,16 +138,9 @@ int main() {
                 }       
             }
 
-
             nsteps[counter]=j;
             cont= cont*2;
-            counter ++;
-            
-            
-            memset(xposArray, 0, sizeof(xposArray));
-            memset(yposArray, 0, sizeof(xposArray));
-            memset(xposSquaredArray, 0, sizeof(xposArray));
-            memset(yposSquaredArray, 0, sizeof(xposArray));
+            counter ++;            
 
         }
     }
@@ -193,51 +183,7 @@ int main() {
         
         //cout << "\nxgroupvar " << (int) q << " = " << (double) xgroupvar[q];
         //cout << "\nygroupvar " << (int) q << " = " << (double) ygroupvar[q];
-
     }
 
-    
-	/*
-    TCanvas *values = new TCanvas ("errors","XSigma trend", 1000., 1000.);
-    TGraph *g1 = new TGraph(6,nsteps,xplot);
-    //TAxis *xaxis = g1->GetXaxis();
-    //xaxis->SetLimits(0.,500000);
-    //TAxis *yaxis = g1->GetYaxis();
-    //yaxis->SetLimits(0,6);
-    g1 ->SetLineColor(2);
-    values->cd();
-    g1->Draw("A*");
-    TF1 *powerlaw= new TF1("Power_law", "pow(x,[0])" , 0.,1000.);
-    g1 -> Fit(powerlaw , "Q");
-    g1->Draw("Same");
-    values->cd();
-
-    //double a=powerlaw->GetParameter(0);
-    //double mu=powerlaw->GetParameter(1);
-    
-    TCanvas *values1 = new TCanvas ("errors1","YSigma trend", 1000., 1000.);
-    TGraph *g2 = new TGraph(6,nsteps,yplot);
-    //TAxis *xaxis = g1->GetXaxis();
-    //xaxis->SetLimits(0.,500000);
-    //TAxis *yaxis = g1->GetYaxis();
-    //yaxis->SetLimits(0,6);
-    g2 ->SetLineColor(2);
-    values1->cd();
-    g2->Draw("A*");
-    TF1 *powerlaw1= new TF1("Power_law", "pow(x,[0])" , 0.,1000.);
-    g2 -> Fit(powerlaw1 , "Q");
-    g2->Draw("Same");
-    values1->cd();
-    
-    //double b=powerlaw1->GetParameter(0);
-    //double nu=powerlaw1->GetParameter(1);
-    
-  
-   
-    
-    
-    app.Run();
-    */
     return 0;
 }
-

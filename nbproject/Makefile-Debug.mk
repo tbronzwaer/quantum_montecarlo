@@ -35,8 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/1827138917/mt19937-64.o \
-	${OBJECTDIR}/RW.o
+	${OBJECTDIR}/RW.o \
+	${OBJECTDIR}/mt19937-64.o
 
 
 # C Compiler Flags
@@ -57,21 +57,21 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rw.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/quantum_montecarlo.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rw.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/quantum_montecarlo.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rw ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/_ext/1827138917/mt19937-64.o: /C/cppprojects/Computational\ Physics/RW/mt19937-64.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1827138917
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/C/cppprojects/MC\ techniques/MC_problem1 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1827138917/mt19937-64.o /C/cppprojects/Computational\ Physics/RW/mt19937-64.cpp
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/quantum_montecarlo ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/RW.o: RW.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/C/cppprojects/MC\ techniques/MC_problem1 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/RW.o RW.cpp
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/C/cppprojects/MC\ techniques/MC_problem1 -MMD -MP -MF $@.d -o ${OBJECTDIR}/RW.o RW.cpp
+
+${OBJECTDIR}/mt19937-64.o: mt19937-64.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/C/cppprojects/MC\ techniques/MC_problem1 -MMD -MP -MF $@.d -o ${OBJECTDIR}/mt19937-64.o mt19937-64.cpp
 
 # Subprojects
 .build-subprojects:
@@ -79,7 +79,7 @@ ${OBJECTDIR}/RW.o: RW.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rw.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/quantum_montecarlo.exe
 
 # Subprojects
 .clean-subprojects:
